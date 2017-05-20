@@ -33,7 +33,7 @@ public class Parent extends EntityBase {
     private GrandParent grandParent;
 
     @Valid
-    @OneToMany(mappedBy = "parent", orphanRemoval = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Child> children;
 
     public Parent() {
