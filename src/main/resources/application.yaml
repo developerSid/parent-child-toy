@@ -1,0 +1,31 @@
+spring:
+  profiles.active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: drop-and-create
+              create-target: create.sql
+              drop-target: drop.sql
+    show-sql: true
+flyway:
+  enabled: true
+  locations: db/migration/{vendor}
+  user: admin
+  password: admin
+logging:
+  level:
+    org.hibernate: DEBUG
+    org.hibernate.type: trace
