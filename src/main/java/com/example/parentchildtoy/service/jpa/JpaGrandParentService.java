@@ -19,4 +19,9 @@ public class JpaGrandParentService implements GrandParentService {
     public GrandParent save(GrandParent grandParent) {
         return grandParentRepository.save(grandParent);
     }
+
+    @Override
+    public GrandParent update(GrandParent grandParent) {
+        return grandParentRepository.save(grandParent);
+    }
 }

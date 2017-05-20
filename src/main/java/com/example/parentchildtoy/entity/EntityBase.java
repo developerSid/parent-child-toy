@@ -52,11 +52,6 @@ public class EntityBase {
     }
 
     @Override
-    public String toString() {
-        return this.getClass().getName() + " [ID=" + id + "]";
-    }
-
-    @Override
     public int hashCode() {
         return getId() != null ? getId().hashCode() : 0;
     }
